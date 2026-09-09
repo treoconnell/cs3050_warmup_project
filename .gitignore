@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Node clutter
+node_modules
+package.json
+package-lock.json
+fetch.js

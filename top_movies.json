@@ -1,0 +1,564 @@
+[
+  {
+    "title": "The Shawshank Redemption",
+    "year": "1994",
+    "rating": "9.3",
+    "box_office": "58.0"
+  },
+  {
+    "title": "The Godfather",
+    "year": "1972",
+    "rating": "9.2",
+    "box_office": "246.1"
+  },
+  {
+    "title": "The Dark Knight",
+    "year": "2008",
+    "rating": "9.0",
+    "box_office": "1004.9"
+  },
+  {
+    "title": "The Godfather: Part II",
+    "year": "1974",
+    "rating": "9.0",
+    "box_office": "48.5"
+  },
+  {
+    "title": "12 Angry Men",
+    "year": "1957",
+    "rating": "9.0",
+    "box_office": "1.0"
+  },
+  {
+    "title": "The Lord of the Rings: The Return of the King",
+    "year": "2003",
+    "rating": "8.9",
+    "box_office": "1119.9"
+  },
+  {
+    "title": "Schindler's List",
+    "year": "1993",
+    "rating": "8.9",
+    "box_office": "322.1"
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "year": "2001",
+    "rating": "8.8",
+    "box_office": "871.5"
+  },
+  {
+    "title": "Inception",
+    "year": "2010",
+    "rating": "8.8",
+    "box_office": "836.8"
+  },
+  {
+    "title": "Star Wars: Episode V – The Empire Strikes Back",
+    "year": "1980",
+    "rating": "8.7",
+    "box_office": "538.4"
+  },
+  {
+    "title": "The Lord of the Rings: The Two Towers",
+    "year": "2002",
+    "rating": "8.7",
+    "box_office": "926.0"
+  },
+  {
+    "title": "Fight Club",
+    "year": "1999",
+    "rating": "8.8",
+    "box_office": "100.9"
+  },
+  {
+    "title": "Forrest Gump",
+    "year": "1994",
+    "rating": "8.8",
+    "box_office": "678.2"
+  },
+  {
+    "title": "The Matrix",
+    "year": "1999",
+    "rating": "8.7",
+    "box_office": "466.3"
+  },
+  {
+    "title": "Goodfellas",
+    "year": "1990",
+    "rating": "8.7",
+    "box_office": "47.0"
+  },
+  {
+    "title": "One Flew Over the Cuckoo's Nest",
+    "year": "1975",
+    "rating": "8.7",
+    "box_office": "162.0"
+  },
+  {
+    "title": "Se7en",
+    "year": "1995",
+    "rating": "8.6",
+    "box_office": "327.3"
+  },
+  {
+    "title": "Seven Samurai",
+    "year": "1954",
+    "rating": "8.6",
+    "box_office": "0.0"
+  },
+  {
+    "title": "City of God",
+    "year": "2002",
+    "rating": "8.6",
+    "box_office": "30.6"
+  },
+  {
+    "title": "Life Is Beautiful",
+    "year": "1997",
+    "rating": "8.6",
+    "box_office": "229.1"
+  },
+  {
+    "title": "The Silence of the Lambs",
+    "year": "1991",
+    "rating": "8.6",
+    "box_office": "272.7"
+  },
+  {
+    "title": "It's a Wonderful Life",
+    "year": "1946",
+    "rating": "8.6",
+    "box_office": "3.3"
+  },
+  {
+    "title": "The Usual Suspects",
+    "year": "1995",
+    "rating": "8.5",
+    "box_office": "66.8"
+  },
+  {
+    "title": "Léon: The Professional",
+    "year": "1994",
+    "rating": "8.5"
+  },
+  {
+    "title": "Spirited Away",
+    "year": "2001",
+    "rating": "8.6",
+    "box_office": "355.5"
+  },
+  {
+    "title": "Saving Private Ryan",
+    "year": "1998",
+    "rating": "8.6",
+    "box_office": "481.8"
+  },
+  {
+    "title": "The Green Mile",
+    "year": "1999",
+    "rating": "8.6",
+    "box_office": "286.8"
+  },
+  {
+    "title": "Parasite",
+    "year": "2019",
+    "rating": "8.6",
+    "box_office": "258.8"
+  },
+  {
+    "title": "Interstellar",
+    "year": "2014",
+    "rating": "8.6",
+    "box_office": "677.5"
+  },
+  {
+    "title": "American History X",
+    "year": "1998",
+    "rating": "8.5",
+    "box_office": "23.9"
+  },
+  {
+    "title": "City Lights",
+    "year": "1931",
+    "rating": "8.5",
+    "box_office": "4.3"
+  },
+  {
+    "title": "The Lion King",
+    "year": "1994",
+    "rating": "8.5",
+    "box_office": "968.5"
+  },
+  {
+    "title": "Back to the Future",
+    "year": "1985",
+    "rating": "8.5",
+    "box_office": "388.8"
+  },
+  {
+    "title": "Terminator 2: Judgment Day",
+    "year": "1991",
+    "rating": "8.5",
+    "box_office": "520.9"
+  },
+  {
+    "title": "Modern Times",
+    "year": "1936",
+    "rating": "8.5",
+    "box_office": "1.5"
+  },
+  {
+    "title": "Once Upon a Time in the West",
+    "year": "1968",
+    "rating": "8.5",
+    "box_office": "5.3"
+  },
+  {
+    "title": "Alien",
+    "year": "1979",
+    "rating": "8.4",
+    "box_office": "104.9"
+  },
+  {
+    "title": "The Pianist",
+    "year": "2002",
+    "rating": "8.5",
+    "box_office": "120.1"
+  },
+  {
+    "title": "The Departed",
+    "year": "2006",
+    "rating": "8.5",
+    "box_office": "291.5"
+  },
+  {
+    "title": "Gladiator",
+    "year": "2000",
+    "rating": "8.5",
+    "box_office": "465.5"
+  },
+  {
+    "title": "Apocalypse Now",
+    "year": "1979",
+    "rating": "8.4"
+  },
+  {
+    "title": "Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb",
+    "year": "1964",
+    "rating": "8.4"
+  },
+  {
+    "title": "The Great Dictator",
+    "year": "1940",
+    "rating": "8.4"
+  },
+  {
+    "title": "Memento",
+    "year": "2000",
+    "rating": "8.4",
+    "box_office": "39.7"
+  },
+  {
+    "title": "Rashomon",
+    "year": "1950",
+    "rating": "8.2"
+  },
+  {
+    "title": "Chinatown",
+    "year": "1974",
+    "rating": "8.2",
+    "box_office": "29.2"
+  },
+  {
+    "title": "The Third Man",
+    "year": "1949",
+    "rating": "8.1"
+  },
+  {
+    "title": "North by Northwest",
+    "year": "1959",
+    "rating": "8.3"
+  },
+  {
+    "title": "Vertigo",
+    "year": "1958",
+    "rating": "8.3",
+    "box_office": "7.3"
+  },
+  {
+    "title": "The Apartment",
+    "year": "1960",
+    "rating": "8.3",
+    "box_office": "24.6"
+  },
+  {
+    "title": "Rear Window",
+    "year": "1954",
+    "rating": "8.5",
+    "box_office": "37.9"
+  },
+  {
+    "title": "A Clockwork Orange",
+    "year": "1971",
+    "rating": "8.3",
+    "box_office": "114.0"
+  },
+  {
+    "title": "Blade Runner",
+    "year": "1982",
+    "rating": "8.2",
+    "box_office": "32.9"
+  },
+  {
+    "title": "Taxi Driver",
+    "year": "1976",
+    "rating": "8.3",
+    "box_office": "28.3"
+  },
+  {
+    "title": "\"The Good",
+    "year": " the Bad and the Ugly\"",
+    "rating": "Italy|Spain|West Germany",
+    "box_office": "0"
+  },
+  {
+    "title": "The Graduate",
+    "year": "1967",
+    "rating": "8.0",
+    "box_office": "104.9"
+  },
+  {
+    "title": "Heat",
+    "year": "1995",
+    "rating": "8.2",
+    "box_office": "187.4"
+  },
+  {
+    "title": "Amélie",
+    "year": "2001",
+    "rating": "8.3",
+    "box_office": "174.2"
+  },
+  {
+    "title": "Pan's Labyrinth",
+    "year": "2006",
+    "rating": "8.2",
+    "box_office": "83.3"
+  },
+  {
+    "title": "The Social Network",
+    "year": "2010",
+    "rating": "7.7",
+    "box_office": "224.9"
+  },
+  {
+    "title": "The Breakfast Club",
+    "year": "1985",
+    "rating": "7.8",
+    "box_office": "51.5"
+  },
+  {
+    "title": "Raging Bull",
+    "year": "1980",
+    "rating": "8.2",
+    "box_office": "23.4"
+  },
+  {
+    "title": "The Princess Bride",
+    "year": "1987",
+    "rating": "8.1",
+    "box_office": "30.9"
+  },
+  {
+    "title": "Babylon",
+    "year": "1980"
+  },
+  {
+    "title": "The Big Lebowski",
+    "year": "1998",
+    "rating": "8.1",
+    "box_office": "46.7"
+  },
+  {
+    "title": "The Truman Show",
+    "year": "1998",
+    "rating": "8.1",
+    "box_office": "264.1"
+  },
+  {
+    "title": "The Handmaiden",
+    "year": "2016",
+    "rating": "8.1",
+    "box_office": "38.3"
+  },
+  {
+    "title": "No Country for Old Men",
+    "year": "2007",
+    "rating": "8.1",
+    "box_office": "171.6"
+  },
+  {
+    "title": "There Will Be Blood",
+    "year": "2007",
+    "rating": "8.1",
+    "box_office": "76.2"
+  },
+  {
+    "title": "The Sting",
+    "year": "1973",
+    "rating": "8.3",
+    "box_office": "159.3"
+  },
+  {
+    "title": "The Great Escape",
+    "year": "1963",
+    "rating": "8.2",
+    "box_office": "11.7"
+  },
+  {
+    "title": "The Bridge on the River Kwai",
+    "year": "1957",
+    "rating": "8.1",
+    "box_office": "30.6"
+  },
+  {
+    "title": "The Wizard of Oz",
+    "year": "1939",
+    "rating": "8.0",
+    "box_office": "400.0"
+  },
+  {
+    "title": "Paths of Glory",
+    "year": "1957",
+    "rating": "8.4"
+  },
+  {
+    "title": "The Grapes of Wrath",
+    "year": "1940",
+    "rating": "8.1",
+    "box_office": "3.6"
+  },
+  {
+    "title": "My Neighbor Totoro",
+    "year": "1988",
+    "rating": "8.2",
+    "box_office": "45.2"
+  },
+  {
+    "title": "Die Hard",
+    "year": "1988",
+    "rating": "8.2",
+    "box_office": "140.8"
+  },
+  {
+    "title": "Oldboy",
+    "year": "2003",
+    "rating": "8.4",
+    "box_office": "17.0"
+  },
+  {
+    "title": "Das Boot",
+    "year": "1981",
+    "rating": "8.3",
+    "box_office": "11.7"
+  },
+  {
+    "title": "The Thing",
+    "year": "1982",
+    "rating": "8.1",
+    "box_office": "19.6"
+  },
+  {
+    "title": "The Seventh Seal",
+    "year": "1957",
+    "rating": "8.2"
+  },
+  {
+    "title": "Wild Strawberries",
+    "year": "1957",
+    "rating": "8.0"
+  },
+  {
+    "title": "Ikiru",
+    "year": "1952",
+    "rating": "8.1"
+  },
+  {
+    "title": "On the Waterfront",
+    "year": "1954",
+    "rating": "8.1",
+    "box_office": "9.6"
+  },
+  {
+    "title": "Sunset Boulevard",
+    "year": "1950",
+    "rating": "8.4",
+    "box_office": "5.3"
+  },
+  {
+    "title": "Rebecca",
+    "year": "1940",
+    "rating": "8.1",
+    "box_office": "6.0"
+  },
+  {
+    "title": "The Maltese Falcon",
+    "year": "1941",
+    "rating": "8.0",
+    "box_office": "1.8"
+  },
+  {
+    "title": "Touch of Evil",
+    "year": "1958",
+    "rating": "8.0"
+  },
+  {
+    "title": "The Exorcist",
+    "year": "1973",
+    "rating": "8.0",
+    "box_office": "441.3"
+  },
+  {
+    "title": "The Shining",
+    "year": "1980",
+    "rating": "8.4",
+    "box_office": "47.3"
+  },
+  {
+    "title": "Citizen Kane",
+    "year": "1941",
+    "rating": "8.3",
+    "box_office": "1.6"
+  },
+  {
+    "title": "Lawrence of Arabia",
+    "year": "1962",
+    "rating": "8.3",
+    "box_office": "70.0"
+  },
+  {
+    "title": "The Bridge on the River Kwai",
+    "year": "1957",
+    "rating": "8.1",
+    "box_office": "30.6"
+  },
+  {
+    "title": "Double Indemnity",
+    "year": "1944",
+    "rating": "8.0",
+    "box_office": "5.7"
+  },
+  {
+    "title": "Annie Hall",
+    "year": "1977",
+    "rating": "8.0",
+    "box_office": "38.3"
+  },
+  {
+    "title": "Some Like It Hot",
+    "year": "1959",
+    "rating": "8.2",
+    "box_office": "25.0"
+  }
+]
