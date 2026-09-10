@@ -221,4 +221,3 @@ __marimo__/
 node_modules
 package.json
 package-lock.json
-fetch.js
