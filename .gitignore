@@ -221,3 +221,6 @@ __marimo__/
 node_modules
 package.json
 package-lock.json
+
+#Firebase env
+firebase_key_PRIVATE.json
