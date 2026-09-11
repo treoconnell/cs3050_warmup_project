@@ -7,7 +7,10 @@ function smartsplit(string){
         let char = string[i]
         if (char == "\""){
             in_quotes = !in_quotes
-        }else if(char == "," && !in_quotes){
+            string = string.slice(0, i) + string.slice(i + 1);
+            char = string[i]
+        }
+        if(char == "," && !in_quotes){
             indices.push(i)
         }
     }
