@@ -28,14 +28,24 @@ class Parser():
         title_statement = title + title_only_operators + value + optional_get_statement
         
         #grammar 2
-        
-        year_statement = year + operator + value
+        num_value = pp.pyparsing_common.number
+        year_statement = year + operator + num_value
         
         #grammar 3
         
-        rating_statement = rating + operator + value
-        return title_statement.parse_string(query)
+        rating_statement = rating + operator + num_value
+        
+        
+        #overall statement
+        
+        statement = title_statement ^ year_statement ^ rating_statement
+        
+        #connecting multiple statements with AND/OR
+        connectors = pp.one_of("and or")
+        expression = statement + pp.ZeroOrMore(connectors + statement)
+        
+        return expression.parse_string(query)
     
 parser = Parser()
     
-print(parser.parse('Title == "Airbuds 2" Get Year'))
+print(parser.parse('Title  == "The Shawshank Redemption" and Year > 2000'))
