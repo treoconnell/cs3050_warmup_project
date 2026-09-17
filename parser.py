@@ -10,25 +10,25 @@ class Parser():
         
         
         
-        title = pp.Keyword("Title")
-        year = pp.Keyword("Year")
-        rating = pp.Keyword("Rating")
+        title = pp.CaselessKeyword("Title")
+        year = pp.CaselessKeyword("Year")
+        rating = pp.CaselessKeyword("Rating")
         
-        title_only_operators = pp.one_of("== !=")
-        operator = pp.one_of("== != < > <= >=")
+        title_only_operators = pp.one_of("== !=").set_name("title comparison operator (== or !=)")
+        operator = pp.one_of("== != < > <= >=").set_name("Comparison operator (== != < > <= >=)")
         
-        value = pp.QuotedString('"')
+        movie_name = pp.QuotedString('"').set_name("movie name in quotes")
         
-        get = pp.Keyword("Get")
+        get = pp.CaselessKeyword("Get")
         
         #get statement follows a title statement optionally
         optional_get_statement = pp.Optional(get + year | get + rating )
         
         #grammar 1
-        title_statement = title + title_only_operators + value + optional_get_statement
+        title_statement = title + title_only_operators + movie_name + optional_get_statement
         
         #grammar 2
-        num_value = pp.pyparsing_common.number
+        num_value = pp.pyparsing_common.number.set_name("numeric value")
         year_statement = year + operator + num_value
         
         #grammar 3
@@ -41,11 +41,18 @@ class Parser():
         statement = title_statement ^ year_statement ^ rating_statement
         
         #connecting multiple statements with AND/OR
-        connectors = pp.one_of("and or")
+        connectors = pp.one_of("and or", caseless=True).set_name("connector (and/or)")
         expression = statement + pp.ZeroOrMore(connectors + statement)
         
-        return expression.parse_string(query)
+        try:
+            result = expression.parse_string(query, parse_all=True)
+            success = True
+            return success, result
+        except pp.ParseBaseException as e:
+            success = False
+            return success, str(e)
     
 parser = Parser()
     
-print(parser.parse('Title  == "The Shawshank Redemption" and Year > 2000'))
+print(parser.parse('Title == "The Shawshank Redemption" and Year > 2000 '))
+
