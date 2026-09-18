@@ -1,5 +1,7 @@
 import firebase_admin
 from firebase_admin import credentials, firestore
+from google.cloud.firestore_v1.base_query import FieldFilter
+from google.cloud.firestore_v1.base_document import DocumentSnapshot
 
 class FirebaseConnection:
     def __init__(self, db_id = "movies-remote", key_location = "firebase_key_PRIVATE.json"):
@@ -10,9 +12,45 @@ class FirebaseConnection:
     def clear_collection(self, collection_id = "movies"):
         self.db.recursive_delete(self.db.collection(collection_id)) # recursivly delete all documents from the collection, experimentally a noop for an empty collection
 
+    def convert_float(self, string): # created convert float to catch any errors when converting rating string to float; some items dont have rating field
+        try:
+            return float(string)
+        except (ValueError, TypeError):
+            return None
+
     def batch_write(self, document_list, collection_id = "movies"):
         batch = self.db.batch()                              # BATCH START
+
         for document_data in document_list:
             new_document = self.db.collection(collection_id).document()
             batch.set(new_document, document_data)    
+
+            batch.set(new_document, {**document_data, "rating": self.convert_float((document_data.get("rating")))}) # needed to convert ratings from strings to floats
+
         batch.commit()                                  # BATCH END
+
+    def get_by_title(self, movie_title, collection_id = "movies"):
+        query = self.db.collection(collection_id).where(filter=FieldFilter("title", "==", movie_title))
+
+        movie_items = [{**doc.to_dict()} for doc in query.stream()]
+
+        if not movie_items:
+            return None  
+
+        return movie_items
+
+    def get_by_rating(self, movie_rating, operator, collection_id = "movies"):
+
+        query = self.db.collection(collection_id).where(filter=FieldFilter("rating", operator, movie_rating))
+
+        movie_items = [{**doc.to_dict()} for doc in query.stream()]
+
+        if not movie_items:
+            return None  
+
+        return movie_items
+
+
+
+
+        
