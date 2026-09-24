@@ -8,6 +8,12 @@ class FirebaseConnection:
         cred = credentials.Certificate(key_location)                # generated as cs3050-warmup-e54d9-firebase-adminsdk-fbsvc-29129496a9.json
         firebase_admin.initialize_app(cred)                         # initialze the firebase app with credentials
         self.db = firestore.client(database_id = db_id)             # open the db for reading, kwarg database_id since the db has a name and is not `(default)`
+        
+        #translation layer between internal and firebase identifiers
+        self.translation = {"Title" : "title", 
+                            "Rating": "rating", 
+                            "Year": "year", 
+                            "Box Office": "box_office"} 
     
     def clear_collection(self, collection_id = "movies"):
         self.db.recursive_delete(self.db.collection(collection_id)) # recursivly delete all documents from the collection, experimentally a noop for an empty collection
@@ -32,16 +38,27 @@ class FirebaseConnection:
             batch.set(new_document, document_data)    
 
             batch.set(new_document, {**document_data, 
-            "rating": self.convert_float((document_data.get("rating"))),
-            "box_office": self.convert_float((document_data.get("box_office"))),
-            "year": self.convert_int((document_data.get("year")))
+                "rating": self.convert_float((document_data.get("rating"))),
+                "box_office": self.convert_float((document_data.get("box_office"))),
+                "year": self.convert_int((document_data.get("year")))
             }) # needed to convert to correct types to use operands
            
 
         batch.commit()                                  # BATCH END
+    
+    def get_generic(self, predicate, operator, item, collection_id = "movies"):
+        query = self.db.collection(collection_id).where(filter=FieldFilter(self.translation[predicate], operator, item))
 
-    def get_by_title(self, movie_title, collection_id = "movies"):
-        query = self.db.collection(collection_id).where(filter=FieldFilter("title", "==", movie_title))
+        movie_items = [{**doc.to_dict()} for doc in query.stream()]
+
+        if not movie_items:
+            return None  
+
+        return movie_items
+
+
+    def get_by_title(self, movie_title, connector = "==", collection_id = "movies"):
+        query = self.db.collection(collection_id).where(filter=FieldFilter("title", connector, movie_title))
 
         movie_items = [{**doc.to_dict()} for doc in query.stream()]
 
