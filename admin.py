@@ -12,17 +12,16 @@ if __name__ == "__main__":
 
     movies = []
 
-    try: 
-        with open(sys.argv[1]) as f:
+    try:
+        with open(sys.argv[1], encoding="utf-8") as f:
             movies = json.load(f)
     except IOError as e:
         print("I/O error: ", e.strerror)
-        raise SystemExit()
-    
+        raise SystemExit() from e
+
     try:
         connection = FirebaseConnection()
         connection.clear_collection()
         connection.batch_write(movies)
     except Exception as e:
         print("Transaction error: ", e)
-    

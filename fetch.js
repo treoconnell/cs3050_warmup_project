@@ -5,6 +5,9 @@ function smartsplit(string){
     let indices = []
     for(let i = 0; i<string.length; i++){
         let char = string[i]
+        if (char == "é"){
+            string = string.slice(0, i) + "e" + string.slice(i + 1);
+        }
         if (char == "\""){
             in_quotes = !in_quotes
             string = string.slice(0, i) + string.slice(i + 1);
