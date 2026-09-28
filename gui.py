@@ -95,7 +95,8 @@ search_box = tk.Entry(
     width=50,
     font=("Arial", 12),
     bg="white",
-    fg="black"
+    fg="black",
+    insertbackground="black"
 )
 search_box.grid(column=0, row=0)
 
