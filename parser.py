@@ -81,4 +81,4 @@ class Parser():
 
 parser = Parser()
     
-print(parser.parse('Title == "The Shawshank Redemption" Get Rating'))
+# print(parser.parse('Title == "The Shawshank Redemption" Get Rating'))

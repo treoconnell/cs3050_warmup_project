@@ -11,7 +11,28 @@ class Movie:
         self.year = year
         self.box_office = box_office # optional
 
-connection = FirebaseConnection()
+class Query:
+    def __init__(self, parsed_dictionary, connection):
+        cond = parsed_dictionary['conditions'][0]
+        movies = connection.get_generic(cond['field'], cond['op'], cond['value'])
+
+        self.movieObjects = []
+        for movie in movies or []:
+            self.movieObjects.append(Movie(
+                movie.get('title'),
+                movie.get('rating'),
+                movie.get('year'),
+                movie.get('box_office'),
+            ))
+
+    def get_movies(self):
+        return self.movieObjects
+        
+# connection = FirebaseConnection()
+# m1 = connection.get_generic("Rating", ">", 9.0)
+# print(m1)
+
+""" 
 shawshank = connection.get_by_title("The Shawshank Redemption")
 print(shawshank)
 
@@ -32,3 +53,4 @@ box_office_test = connection.get_by_box_office(400.0, '>=')
 print("By box office:")
 for item in box_office_test:
     print(item)
+ """

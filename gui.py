@@ -1,6 +1,9 @@
 import tkinter as tk
 import parser
+import userQuery
+from firebase_connection import FirebaseConnection
 
+CONNECTION = FirebaseConnection()
 PARSER = parser.Parser()
 
 """
@@ -12,7 +15,9 @@ def send_search(criteria):
     if "error" in parsed_result:    # If error, only display error, don't search Firebase.
         display_results(parsed_result)
     else:
-        pass
+        query = userQuery.Query(parsed_result, CONNECTION)  
+        movie_results = query.get_movies()     
+        display_results(movie_results)
         # This is where I need to call Zach's function and get the real results
         # movie_results = CALL ZACH'S FUNCTION
         # display_results(movie_results)

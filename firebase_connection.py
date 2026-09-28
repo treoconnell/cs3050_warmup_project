@@ -8,12 +8,6 @@ class FirebaseConnection:
         cred = credentials.Certificate(key_location)                # generated as cs3050-warmup-e54d9-firebase-adminsdk-fbsvc-29129496a9.json
         firebase_admin.initialize_app(cred)                         # initialze the firebase app with credentials
         self.db = firestore.client(database_id = db_id)             # open the db for reading, kwarg database_id since the db has a name and is not `(default)`
-        
-        #translation layer between internal and firebase identifiers
-        self.translation = {"Title" : "title", 
-                            "Rating": "rating", 
-                            "Year": "year", 
-                            "Box Office": "box_office"} 
     
     def clear_collection(self, collection_id = "movies"):
         self.db.recursive_delete(self.db.collection(collection_id)) # recursivly delete all documents from the collection, experimentally a noop for an empty collection
@@ -47,7 +41,8 @@ class FirebaseConnection:
         batch.commit()                                  # BATCH END
     
     def get_generic(self, predicate, operator, item, collection_id = "movies"):
-        query = self.db.collection(collection_id).where(filter=FieldFilter(self.translation[predicate], operator, item))
+        query = self.db.collection(collection_id).where(filter=FieldFilter(predicate, operator, item))
+        print(predicate)
 
         movie_items = [{**doc.to_dict()} for doc in query.stream()]
 
