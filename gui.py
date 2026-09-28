@@ -1,4 +1,30 @@
 import tkinter as tk
+import parser
+
+PARSER = parser.Parser()
+
+def send_search(criteria):
+    parsed_result = PARSER.parse(criteria)
+    if "error" in parsed_result:
+        display_results(parsed_result)
+    else:
+        pass
+        # This is where I need to call Zach's function and get the real results
+        # movie_results = CALL ZACH'S FUNCTION
+        # display_results(movie_results)
+
+def display_results(results):
+    list_box.delete(1, tk.END)
+    if "error" in results:
+        list_box.insert(1, "Error: %s" % results["error"])
+    else:
+        index_of_listbox = 1
+        for result in results:
+            movie_info = f'"{result.title}", {result.year}, {result.rating}/10, ${result.box_office}m'
+            list_box.insert(index_of_listbox, movie_info)
+            index_of_listbox += 1
+
+
 
 def help_window():
     help_win = tk.Tk()
@@ -71,9 +97,11 @@ search_button = tk.Button(
     text="Search",
     bg="white",
     fg="black",
-    command=lambda: print(search_box.get()) #TODO: Not going to print, going to feed the message into the parser
+    command=lambda: send_search(search_box.get())
 )
 search_button.grid(column=1, row=0)
+root.bind("<Return>", lambda event: send_search(search_box.get()))
+
 
 # List Box
 # Whenever the parser returns the movies, we're going to display them in this list
@@ -85,6 +113,7 @@ list_box = tk.Listbox(
     fg="black"
 )
 list_box.grid(column=0, columnspan=2, row=1, sticky="nsew", padx=10, pady=10)
+list_box.insert(0, "Title, Year, Rating, Box Office")
 
 # Exit Button
 exit_button = tk.Button(
