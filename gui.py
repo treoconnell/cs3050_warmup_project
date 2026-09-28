@@ -34,7 +34,7 @@ def display_results(results):
     else:
         index_of_listbox = 1
         for result in results:
-            movie_info = f'"{result.title}", {result.year}, {result.rating}/10, ${result.box_office}m'
+            movie_info = f'"{result.title}", {result.year}, {result.rating}, {result.box_office}'
             list_box.insert(index_of_listbox, movie_info)
             index_of_listbox += 1
 
