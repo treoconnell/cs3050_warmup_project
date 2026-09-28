@@ -3,9 +3,13 @@ import parser
 
 PARSER = parser.Parser()
 
+"""
+This function sends the user's input to the parser. The parser will either return an error
+or it will return the properly formatted queries that are sent to the firebase conncection.
+"""
 def send_search(criteria):
     parsed_result = PARSER.parse(criteria)
-    if "error" in parsed_result:
+    if "error" in parsed_result:    # If error, only display error, don't search Firebase.
         display_results(parsed_result)
     else:
         pass
@@ -13,8 +17,13 @@ def send_search(criteria):
         # movie_results = CALL ZACH'S FUNCTION
         # display_results(movie_results)
 
+"""
+This function clears the listbox of any previous information and then displays the results
+that are derived from the search criteria. It formats the movies to be printed in the following
+format: "Movie Name", Year, Rating/10, $[Box Office]m.
+"""
 def display_results(results):
-    list_box.delete(1, tk.END)
+    list_box.delete(1, tk.END) # Clearing the listbox prior to displaying new info.
     if "error" in results:
         list_box.insert(1, "Error: %s" % results["error"])
     else:
@@ -25,16 +34,14 @@ def display_results(results):
             index_of_listbox += 1
 
 
-
+"""
+This function creates the help window after the help button is pressed.
+"""
 def help_window():
     help_win = tk.Tk()
     help_win.title("Search Query Help Window")
     help_win.geometry("720x720")
-
-    #Background
     help_win.configure(bg="blue")
-
-
 
     # Textbox
     text_box = tk.Text(
@@ -55,7 +62,7 @@ def help_window():
                                 'Shawshank Redemption” Get Year'))
     text_box.pack()
 
-    # Exit Button
+    # Exit Button for Help Window
     help_exit_button = tk.Button(
         help_win,
         text="Exit",
@@ -66,6 +73,7 @@ def help_window():
     help_exit_button.pack()
     help_win.mainloop()
 
+# Defining the tkinter window.
 root = tk.Tk()
 root.title("Movie Lookup")
 root.geometry("720x720")
@@ -102,9 +110,8 @@ search_button = tk.Button(
 search_button.grid(column=1, row=0)
 root.bind("<Return>", lambda event: send_search(search_box.get()))
 
-
 # List Box
-# Whenever the parser returns the movies, we're going to display them in this list
+# Whenever the search query returns the movies or errors, we're going to display them in this list
 list_box = tk.Listbox(
     root,
     width=50,
