@@ -14,13 +14,10 @@ def send_search(criteria):
     parsed_result = PARSER.parse(criteria)
     if "error" in parsed_result:    # If error, only display error, don't search Firebase.
         display_results(parsed_result)
-    else:
-        query = userQuery.Query(parsed_result, CONNECTION)  
+    else: # Otherwise take the good query and pull the movies from Firebase
+        query = userQuery.Query(parsed_result, CONNECTION)
         movie_results = query.get_movies()     
         display_results(movie_results)
-        # This is where I need to call Zach's function and get the real results
-        # movie_results = CALL ZACH'S FUNCTION
-        # display_results(movie_results)
 
 """
 This function clears the listbox of any previous information and then displays the results
@@ -98,7 +95,7 @@ root.rowconfigure(2, weight=0)
 search_box = tk.Entry(
     root,
     width=50,
-    font=("Arial", 12),
+    font=("Arial", 14),
     bg="white",
     fg="black",
     insertbackground="black"
@@ -121,7 +118,7 @@ root.bind("<Return>", lambda event: send_search(search_box.get()))
 list_box = tk.Listbox(
     root,
     width=50,
-    font=("Arial", 12),
+    font=("Arial", 14),
     bg="white",
     fg="black"
 )
